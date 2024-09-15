@@ -21,7 +21,8 @@ public class menu {
 		System.out.println("Tipo: ");
 		String tipo = sc.next();
 		System.out.println("Descrição: ");
-		String descricao = sc.next();
+		sc.nextLine();
+		String descricao = sc.nextLine();
 		System.out.println("Valor: ");
 		double valor = sc.nextDouble();
 		sc.nextLine();

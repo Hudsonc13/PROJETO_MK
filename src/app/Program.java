@@ -7,7 +7,7 @@ public class Program {
 		user usuario = menu.preencherUsuario();
 		gestao gestao1 = new gestao(usuario, 10);
 		item i1 = menu.preencherItem();
-		gestao1.adicionarAssinatura(i1);
+		
 	}
 
 }

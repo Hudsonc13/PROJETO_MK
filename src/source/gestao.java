@@ -50,6 +50,8 @@ public class gestao {
 			if (assinaturas[i].nome.equalsIgnoreCase(nome)) {
 				encontrado = true;
 				System.out.println("Alterando a assinatura: " + nome);
+				System.out.print("Novo nome: ");
+				assinaturas[i].nome = sc.nextLine();
 				System.out.print("Novo valor: ");
 				assinaturas[i].valor = sc.nextDouble();
 				sc.nextLine();
