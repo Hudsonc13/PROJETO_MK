@@ -9,6 +9,11 @@ public class user {
 		this.idade = idade;
 		this.salario = salario;
 	}
-
+	public void imprimeUsuario() {
+		System.out.println("---Imprimindo informações de usuario...---");
+		System.out.println("Nome: " + nome);
+		System.out.println("Idade: " + idade);
+		System.out.println("Salario: " + salario);
+	}
 }
 

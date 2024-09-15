@@ -43,32 +43,26 @@ public class gestao {
 		}
 	}
 
-	public void alterarAssinatura(String nome) {
-		boolean encontrado = false;
+	public void alterarAssinatura(int index) {
 		Scanner sc = new Scanner(System.in);
-		for (int i = 0; i < contador; i++) {
-			if (assinaturas[i].nome.equalsIgnoreCase(nome)) {
-				encontrado = true;
-				System.out.println("Alterando a assinatura: " + nome);
-				System.out.print("Novo nome: ");
-				assinaturas[i].nome = sc.nextLine();
-				System.out.print("Novo valor: ");
-				assinaturas[i].valor = sc.nextDouble();
-				sc.nextLine();
-				System.out.print("Novo dia de vencimento: ");
-				assinaturas[i].dia = sc.nextInt();
-				sc.nextLine();
-				System.out.print("Novo tipo: ");
-				assinaturas[i].tipo = sc.nextLine();
-				System.out.print("Nova descrição: ");
-				assinaturas[i].descricao = sc.nextLine();
-				System.out.println("Assinatura alterada com sucesso!");
-				break;
-			}
-			sc.close();
-		}
-		if (encontrado == false) {
-			System.out.println("Assinatura não encontrada.");
+		index--;
+		if (index < contador) {
+			System.out.println("Alterando a assinatura: " + assinaturas[index].nome);
+			System.out.print("Novo nome: ");
+			assinaturas[index].nome = sc.nextLine();
+			System.out.print("Novo valor: ");
+			assinaturas[index].valor = sc.nextDouble();
+			sc.nextLine();
+			System.out.print("Novo dia de vencimento: ");
+			assinaturas[index].dia = sc.nextInt();
+			sc.nextLine();
+			System.out.print("Novo tipo: ");
+			assinaturas[index].tipo = sc.nextLine();
+			System.out.print("Nova descrição: ");
+			assinaturas[index].descricao = sc.nextLine();
+			System.out.println("Assinatura alterada com sucesso!");
+		}else {
+			System.out.println("indice inválido.");
 		}
 	}
 
