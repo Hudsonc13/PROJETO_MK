@@ -7,9 +7,9 @@ public class gestao {
 	user usuario;
 	int contador;
 
-	public gestao(user usuario, int contador) {
+	public gestao(user usuario, int tamMax) {
 		this.usuario = usuario;
-		this.assinaturas = new item[contador];
+		this.assinaturas = new item[tamMax];
 		this.contador = 0;
 	}
 
@@ -42,51 +42,52 @@ public class gestao {
 			}
 		}
 	}
-	
+
 	public void alterarAssinatura(String nome) {
-        boolean encontrado = false;
-        Scanner sc = new Scanner(System.in);
-        for (int i = 0; i < contador; i++) {
-            if (assinaturas[i].nome.equalsIgnoreCase(nome)) {
-                encontrado = true;
-                System.out.println("Alterando a assinatura: " + nome);
-                System.out.print("Novo valor: ");
-                assinaturas[i].valor = sc.nextDouble();
-                sc.nextLine(); 
-                System.out.print("Novo dia de vencimento: ");
-                assinaturas[i].dia = sc.nextInt();
-                sc.nextLine();
-                System.out.print("Novo tipo: ");
-                assinaturas[i].tipo = sc.nextLine();
-                System.out.print("Nova descrição: ");
-                assinaturas[i].descricao = sc.nextLine();
-                System.out.println("Assinatura alterada com sucesso!");
-                break;
-            }
-            sc.close();
-        }
-        if (encontrado == false) {
-            System.out.println("Assinatura não encontrada.");
-        }
-    }
-	
+		boolean encontrado = false;
+		Scanner sc = new Scanner(System.in);
+		for (int i = 0; i < contador; i++) {
+			if (assinaturas[i].nome.equalsIgnoreCase(nome)) {
+				encontrado = true;
+				System.out.println("Alterando a assinatura: " + nome);
+				System.out.print("Novo valor: ");
+				assinaturas[i].valor = sc.nextDouble();
+				sc.nextLine();
+				System.out.print("Novo dia de vencimento: ");
+				assinaturas[i].dia = sc.nextInt();
+				sc.nextLine();
+				System.out.print("Novo tipo: ");
+				assinaturas[i].tipo = sc.nextLine();
+				System.out.print("Nova descrição: ");
+				assinaturas[i].descricao = sc.nextLine();
+				System.out.println("Assinatura alterada com sucesso!");
+				break;
+			}
+			sc.close();
+		}
+		if (encontrado == false) {
+			System.out.println("Assinatura não encontrada.");
+		}
+	}
+
 	public void calcularDespesas() {
-        double total = 0;
-        for (int i = 0; i < contador; i++) {
-            total += assinaturas[i].valor;
-        }
-        System.out.println("Total de despesas com assinaturas: R$ " + total);
-    }
-	
+		double total = 0;
+		for (int i = 0; i < contador; i++) {
+			total += assinaturas[i].valor;
+		}
+		System.out.println("Total de despesas com assinaturas: R$ " + total);
+	}
+
 	public void listarAssinaturas() {
-        if (contador == 0) {
-            System.out.println("Nenhuma assinatura cadastrada.");
-            return;
-        }
-        for (int i = 0; i < contador; i++) {
-            System.out.println("Assinatura " + (i + 1) + ":");
-            assinaturas[i].exibirInfo();
-            System.out.println("------------------------");
-        }
-    }
+		if (contador == 0) {
+			System.out.println("Nenhuma assinatura cadastrada.");
+
+		} else {
+			for (int i = 0; i < contador; i++) {
+				System.out.println("Assinatura " + (i + 1) + ":");
+				assinaturas[i].exibirInfo();
+				System.out.println("------------------------");
+			}
+		}
+	}
 }
