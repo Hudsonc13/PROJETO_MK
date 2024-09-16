@@ -23,24 +23,18 @@ public class gestao {
 		}
 	}
 
-	public void removerAssinatura(String nome) {
-		boolean encontrado = false;
-		for (int i = 0; i < contador; i++) {
-			if (assinaturas[i].nome.equalsIgnoreCase(nome)) {
-				encontrado = true;
-
-				for (int j = i; j < contador - 1; j++) {
+	public void removerAssinatura(int index) {
+			index--;
+			if (index < contador) {
+				for (int j = index; j < contador - 1; j++) {
 					assinaturas[j] = assinaturas[j + 1];
 				}
 				assinaturas[contador - 1] = null;
 				contador--;
 				System.out.println("Assinatura removida com sucesso!");
-				break;
-			}
-			if (encontrado == false) {
+			} else {
 				System.out.println("Assinatura não encontrada.");
 			}
-		}
 	}
 
 	public void alterarAssinatura(int index) {
@@ -61,7 +55,7 @@ public class gestao {
 			System.out.print("Nova descrição: ");
 			assinaturas[index].descricao = sc.nextLine();
 			System.out.println("Assinatura alterada com sucesso!");
-		}else {
+		} else {
 			System.out.println("indice inválido.");
 		}
 	}

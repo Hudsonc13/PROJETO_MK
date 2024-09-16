@@ -31,7 +31,7 @@ public class Program {
 			case 2:
 				gestao1.listarAssinaturas();
 				System.out.println("assinatura a ser removida: ");
-				gestao1.removerAssinatura(sc.next());
+				gestao1.removerAssinatura(sc.nextInt());
 				break;
 			case 3:
 				gestao1.listarAssinaturas();
