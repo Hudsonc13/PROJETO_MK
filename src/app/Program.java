@@ -6,24 +6,18 @@ import source.*;
 
 public class Program {
 	public static void main(String[] args) {
+		menu menu = new menu();
 		Scanner sc = new Scanner(System.in);
 		user usuario = menu.preencherUsuario();
 		gestao gestao1 = new gestao(usuario, 10);
-		int opcao = 0;
+		
+		menu.escolha = 0;
 		do {
-			System.out.println("\n=== Menu de Opções ===\n");
-			System.out.println("1. Adicionar Assinatura");
-			System.out.println("2. Remover Assinatura");
-			System.out.println("3. Alterar Assinatura");
-			System.out.println("4. Calcular Despesas");
-			System.out.println("5. Listar Assinaturas");
-			System.out.println("6. Exibir Informações do Usuário");
-			System.out.println("0. Sair\n");
-			System.out.print("Escolha uma opção: ");
-			opcao = sc.nextInt();
+			System.out.println(menu.printInterface());
+			menu.escolha = sc.nextInt();
 			sc.nextLine();
 
-			switch (opcao) {
+			switch (menu.escolha) {
 			case 1:
 				item i1 = menu.preencherItem();
 				gestao1.adicionarAssinatura(i1);
@@ -53,7 +47,8 @@ public class Program {
 			case 6:
 				usuario.imprimeUsuario();
 			}
-		} while (opcao != 0);
+		} while (menu.escolha != 0);
+			sc.close();
 	}
 
 }

@@ -15,5 +15,9 @@ public class user {
 		System.out.println("Idade: " + idade);
 		System.out.println("Salario: " + salario);
 	}
+	
+	
+	
+	
 }
 
