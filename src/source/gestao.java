@@ -3,9 +3,9 @@ package source;
 import java.util.Scanner;
 
 public class gestao {
-	item assinaturas[];
-	user usuario;
-	int contador;
+	public item assinaturas[];
+	public user usuario;
+	public int contador;
 
 	public gestao(user usuario, int tamMax) {
 		this.usuario = usuario;
@@ -25,7 +25,7 @@ public class gestao {
 
 	public void removerAssinatura(int index) {
 			index--;
-			if (index < contador) {
+			if (index < contador & !(index < 0)) {
 				for (int j = index; j < contador - 1; j++) {
 					assinaturas[j] = assinaturas[j + 1];
 				}
@@ -40,7 +40,7 @@ public class gestao {
 	public void alterarAssinatura(int index) {
 		Scanner sc = new Scanner(System.in);
 		index--;
-		if (index < contador) {
+		if (index < contador & !(index < 0)) {
 			System.out.println("Alterando a assinatura: " + assinaturas[index].nome);
 			System.out.print("Novo nome: ");
 			assinaturas[index].nome = sc.nextLine();
@@ -70,9 +70,9 @@ public class gestao {
 
 	public void listarAssinaturas() {
 		if (contador == 0) {
-			System.out.println("Nenhuma assinatura cadastrada.");
-
+			System.out.println(usuario.nome + " Não possui nenhuma assinatura cadastrada.");
 		} else {
+			System.out.println("------------------------");
 			for (int i = 0; i < contador; i++) {
 				System.out.println("Assinatura " + (i + 1) + ":");
 				assinaturas[i].exibirInfo();

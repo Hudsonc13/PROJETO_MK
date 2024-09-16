@@ -1,8 +1,8 @@
 package source;
 
 public class user {
-	String nome, idade;
-	double salario;
+	public String nome, idade;
+	public double salario;
 
 	public user(String nome, String idade, double salario) {
 		this.nome = nome;

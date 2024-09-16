@@ -2,9 +2,9 @@ package source;
 
 public class item {
 
-	String nome, tipo, descricao;
-	double valor;
-	int dia;
+	public String nome, tipo, descricao;
+	public double valor;
+	public int dia;
 
 	public item(String nome, String tipo, String descricao, double valor, int data) {
 		this.nome = nome;

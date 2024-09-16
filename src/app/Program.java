@@ -11,14 +11,14 @@ public class Program {
 		gestao gestao1 = new gestao(usuario, 10);
 		int opcao = 0;
 		do {
-			System.out.println("\n=== Menu de Opções ===");
+			System.out.println("\n=== Menu de Opções ===\n");
 			System.out.println("1. Adicionar Assinatura");
 			System.out.println("2. Remover Assinatura");
 			System.out.println("3. Alterar Assinatura");
 			System.out.println("4. Calcular Despesas");
 			System.out.println("5. Listar Assinaturas");
 			System.out.println("6. Exibir Informações do Usuário");
-			System.out.println("0. Sair");
+			System.out.println("0. Sair\n");
 			System.out.print("Escolha uma opção: ");
 			opcao = sc.nextInt();
 			sc.nextLine();
@@ -29,14 +29,20 @@ public class Program {
 				gestao1.adicionarAssinatura(i1);
 				break;
 			case 2:
-				gestao1.listarAssinaturas();
-				System.out.println("assinatura a ser removida: ");
-				gestao1.removerAssinatura(sc.nextInt());
-				break;
+				if(gestao1.contador != 0) {
+					gestao1.listarAssinaturas();
+					System.out.println("Digite o indíce da assinatura a ser removida: ");
+					gestao1.removerAssinatura(sc.nextInt());
+				}else
+					System.out.println(gestao1.usuario.nome + " Não possui nenhuma assinatura cadastrada.");
+					break;
 			case 3:
-				gestao1.listarAssinaturas();
-				System.out.println("Digite a posição da assinatura a ser alterada: ");
-				gestao1.alterarAssinatura(sc.nextInt());
+				if(gestao1.contador != 0) {
+					gestao1.listarAssinaturas();
+					System.out.println("Digite o indíce da assinatura a ser removida: ");
+					gestao1.alterarAssinatura(sc.nextInt());
+				}else
+					System.out.println(gestao1.usuario.nome + " Não possui nenhuma assinatura cadastrada.");
 				break;
 			case 4:
 				gestao1.calcularDespesas();
