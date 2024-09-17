@@ -25,9 +25,9 @@ public class gestao {
 
 	public void removerAssinatura(int index) {
 			index--;
-			if (index < contador & !(index < 0)) {
-				for (int j = index; j < contador - 1; j++) {
-					assinaturas[j] = assinaturas[j + 1];
+			if (index < contador & index >= 0) {
+				for (int i = index; i < contador - 1; i++) {
+					assinaturas[i] = assinaturas[i + 1];
 				}
 				assinaturas[contador - 1] = null;
 				contador--;
@@ -40,7 +40,7 @@ public class gestao {
 	public void alterarAssinatura(int index) {
 		Scanner sc = new Scanner(System.in);
 		index--;
-		if (index < contador & !(index < 0)) {
+		if (index < contador & index >= 0) {
 			System.out.println("Alterando a assinatura: " + assinaturas[index].nome);
 			System.out.print("Novo nome: ");
 			assinaturas[index].nome = sc.nextLine();

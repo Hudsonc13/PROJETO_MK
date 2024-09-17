@@ -27,16 +27,17 @@ public class Program {
 					gestao1.listarAssinaturas();
 					System.out.println("Digite o indíce da assinatura a ser removida: ");
 					gestao1.removerAssinatura(sc.nextInt());
+					break;
 				}else
 					System.out.println(gestao1.usuario.nome + " Não possui nenhuma assinatura cadastrada.");
 					break;
 			case 3:
 				if(gestao1.contador != 0) {
 					gestao1.listarAssinaturas();
-					System.out.println("Digite o indíce da assinatura a ser removida: ");
+					System.out.println("Digite o indíce da assinatura a ser alterada: ");
 					gestao1.alterarAssinatura(sc.nextInt());
 				}else
-					System.out.println(gestao1.usuario.nome + " Não possui nenhuma assinatura cadastrada.");
+					System.out.println(gestao1.usuario.nome + " não possui nenhuma assinatura cadastrada.");
 				break;
 			case 4:
 				gestao1.calcularDespesas();
@@ -46,6 +47,7 @@ public class Program {
 				break;
 			case 6:
 				usuario.imprimeUsuario();
+				break;
 			}
 		} while (menu.escolha != 0);
 			sc.close();
